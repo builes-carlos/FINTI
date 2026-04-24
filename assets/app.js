@@ -371,6 +371,7 @@ function submitFormulario(e) {
   };
 
   guardarLead(lead);
+  actualizarContadoresLeads();
   mostrarConfirmacion();
 }
 
@@ -422,6 +423,15 @@ function initSimulador() {
   sincronizar(50_000_000); // valor inicial: $50M
 }
 
+/* ---- Contador real de leads registrados ---- */
+function actualizarContadoresLeads() {
+  const n = contarLeads();
+  ['hero-lead-count', 'traction-lead-count'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = n;
+  });
+}
+
 /* ---- Inicialización compartida ---- */
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
@@ -431,6 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSideNav();
   initSimulador();
   initFacturaAnim();
+  actualizarContadoresLeads();
 
   // Botón exportar
   const exportBtn = document.getElementById('export-btn');

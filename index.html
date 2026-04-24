@@ -123,18 +123,18 @@
       <div class="hero-badges">
         <div class="hero-badge-item">
           <span class="hero-badge-icon">🏢</span>
-          <span class="hero-badge-num" data-counter="347" data-suffix="+">0</span>
-          <span class="hero-badge-label">pymes en lista de espera</span>
+          <span class="hero-badge-num" id="hero-lead-count">0</span>
+          <span class="hero-badge-label">pymes registradas</span>
         </div>
         <div class="hero-badge-item">
-          <span class="hero-badge-icon">💰</span>
-          <span class="hero-badge-num" data-counter="8200" data-prefix="$" data-suffix="M">0</span>
-          <span class="hero-badge-label">en facturas pre-aprobadas</span>
+          <span class="hero-badge-icon">📊</span>
+          <span class="hero-badge-num">$46,7B</span>
+          <span class="hero-badge-label">en facturas endosadas vía RADIAN (DIAN, 2025)</span>
         </div>
         <div class="hero-badge-item">
-          <span class="hero-badge-icon">📍</span>
-          <span class="hero-badge-num" data-counter="23" data-suffix=" ciudades">0</span>
-          <span class="hero-badge-label">en Colombia</span>
+          <span class="hero-badge-icon">📈</span>
+          <span class="hero-badge-num">51%</span>
+          <span class="hero-badge-label">más empresas usando factoring en Colombia (2024)</span>
         </div>
       </div>
     </div>
@@ -449,7 +449,7 @@
     <div class="text-center" style="margin-bottom: 56px">
       <div class="section-tag animate-on-scroll" style="justify-content: center">Tracción</div>
       <h2 class="section-headline animate-on-scroll delay-1">
-        Pymes que ya confían en Finti
+        El mercado está probado.<br>Finti atiende a quien los demás ignoran.
       </h2>
     </div>
 
@@ -457,68 +457,56 @@
     <div class="traction-grid">
       <div class="traction-card animate-on-scroll delay-1">
         <div class="traction-icon">🏢</div>
-        <div class="traction-num" data-counter="347" data-suffix="+">0</div>
-        <div class="traction-label">Pymes en lista de espera</div>
+        <div class="traction-num" id="traction-lead-count">0</div>
+        <div class="traction-label">Pymes registradas</div>
       </div>
       <div class="traction-card animate-on-scroll delay-2">
         <div class="traction-icon">💰</div>
-        <div class="traction-num" data-counter="8200" data-prefix="$" data-suffix="M">0</div>
-        <div class="traction-label">En facturas pre-aprobadas</div>
+        <div class="traction-num">$1,3B</div>
+        <div class="traction-label">Negociados por IRIS en 2025 — el mercado ya funciona</div>
       </div>
       <div class="traction-card animate-on-scroll delay-3">
-        <div class="traction-icon">📍</div>
-        <div class="traction-num" data-counter="23" data-suffix="">0</div>
-        <div class="traction-label">Ciudades representadas</div>
+        <div class="traction-icon">📈</div>
+        <div class="traction-num" data-counter="51" data-suffix="%">0</div>
+        <div class="traction-label">Más empresas pagadoras usando factoring (2023→2024)</div>
       </div>
       <div class="traction-card animate-on-scroll delay-4">
         <div class="traction-icon">⚡</div>
         <div class="traction-num" data-counter="2" data-prefix="&lt;" data-suffix="h">0</div>
-        <div class="traction-label">Tiempo promedio de aprobación</div>
+        <div class="traction-label">Tiempo de aprobación (objetivo Finti)</div>
       </div>
     </div>
 
-    <!-- Testimonios -->
+    <!-- Preguntas frecuentes de pymes -->
     <div class="testimonios-grid" style="margin-top: 48px">
       <div class="testimonio-card animate-on-scroll delay-1">
-        <div class="testimonio-stars">★★★★★</div>
+        <div class="testimonio-stars" style="color: var(--primary); font-size: 1.2rem; letter-spacing: 0">💬 Lo que nos preguntan</div>
         <p class="testimonio-quote">
-          "Llevaba 45 días esperando que Bavaria me pagara. Con Finti recibí el dinero el mismo día que subí la factura. Increíble."
+          "¿Me evalúan a mí o a mi empresa pagadora?"
         </p>
-        <div class="testimonio-author">
-          <div class="author-avatar">MR</div>
-          <div>
-            <div class="author-name">Mauricio Restrepo</div>
-            <div class="author-empresa">Logística Restrepo SAS · Medellín</div>
-          </div>
-        </div>
+        <p style="font-size: 0.9rem; color: var(--text-2); line-height: 1.7">
+          Evaluamos al <strong style="color: var(--primary)">pagador de tu factura</strong>, no tu historial crediticio. Si tu cliente es una empresa reconocida, la aprobación es prácticamente inmediata.
+        </p>
       </div>
 
       <div class="testimonio-card animate-on-scroll delay-2">
-        <div class="testimonio-stars">★★★★★</div>
+        <div class="testimonio-stars" style="color: var(--primary); font-size: 1.2rem; letter-spacing: 0">💬 Lo que nos preguntan</div>
         <p class="testimonio-quote">
-          "Mi banco me pedía estados financieros de 3 años y aún así no me aprobaban. Finti solo me preguntó por la factura y listo."
+          "¿Cuánto tiempo tarda realmente?"
         </p>
-        <div class="testimonio-author">
-          <div class="author-avatar">LP</div>
-          <div>
-            <div class="author-name">Laura Pinzón</div>
-            <div class="author-empresa">Servicios Ambientales LP · Bogotá</div>
-          </div>
-        </div>
+        <p style="font-size: 0.9rem; color: var(--text-2); line-height: 1.7">
+          Menos de 2 horas desde que subes la factura hasta que el dinero llega a tu cuenta. Sin citas, sin ejecutivos, sin fila.
+        </p>
       </div>
 
       <div class="testimonio-card animate-on-scroll delay-3">
-        <div class="testimonio-stars">★★★★★</div>
+        <div class="testimonio-stars" style="color: var(--primary); font-size: 1.2rem; letter-spacing: 0">💬 Lo que nos preguntan</div>
         <p class="testimonio-quote">
-          "Lo que más me sorprendió fue que no me evaluaron a mí sino al que me tiene que pagar. Eso lo cambia todo para las pymes."
+          "¿Necesito garantías o colateral?"
         </p>
-        <div class="testimonio-author">
-          <div class="author-avatar">CA</div>
-          <div>
-            <div class="author-name">Carlos Arias</div>
-            <div class="author-empresa">Constructora Arias & Co · Cali</div>
-          </div>
-        </div>
+        <p style="font-size: 0.9rem; color: var(--text-2); line-height: 1.7">
+          No. La factura es el único activo que Finti necesita. Sin hipotecas, sin codeudores, sin estados financieros de 3 años. Y sin deuda en tu balance.
+        </p>
       </div>
     </div>
 
@@ -530,7 +518,7 @@
           Decreto 1068 de 2015 · Integrado con RADIAN-DIAN · Datos cifrados
         </div>
       </div>
-      <p class="traction-note">* Cifras de lista de espera pre-lanzamiento. Testimonios de beta testers.</p>
+      <p class="traction-note">* Datos de mercado: DIAN, Colombia Fintech Snapshot 2025, IRIS / Economía y Desarrollo, marzo 2026.</p>
     </div>
   </div>
 </section>

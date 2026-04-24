@@ -70,6 +70,11 @@ Export button (`exportarLeads()`) only appears when ≥1 lead is stored.
 - **WhatsApp**: exactly 10 digits, first digit `3`
 - All fields required before submit
 
+## Reglas de colaboración con el usuario
+
+- **Condiciones explícitas:** Si el usuario pone una condición ("si no recibes X, haz Y solamente"), cumplirla al pie de la letra. No actuar más allá de lo indicado.
+- **`/plan` es diálogo:** El modo plan es conversación hasta que el usuario ordene explícitamente comenzar a codificar. No ejecutar, no editar archivos, no asumir aprobación.
+
 ## Design Constraints
 
 - Palette: emerald green / deep black / amber gold accent (engineer may improve with justification)
