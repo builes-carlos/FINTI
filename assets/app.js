@@ -252,7 +252,7 @@ function initFacturaAnim() {
   if (!diasEl) return;
 
   const TASA_DIARIA = 0.018 / 30;
-  const VALOR       = 85_000_000;
+  const VALOR       = 18_000_000;
   let diasActuales  = 0;
 
   const observer = new IntersectionObserver((entries) => {
@@ -425,11 +425,7 @@ function initSimulador() {
 
 /* ---- Contador real de leads registrados ---- */
 function actualizarContadoresLeads() {
-  const n = contarLeads();
-  ['hero-lead-count', 'traction-lead-count'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = n;
-  });
+  // Reservado para cuando haya elementos de conteo en la UI
 }
 
 /* ---- Inicialización compartida ---- */
