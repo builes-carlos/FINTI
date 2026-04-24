@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finti — Liquidez inmediata para tus facturas. Aprobación en menos de 2 horas vía RADIAN. Sin ejecutivos, sin filas, sin deuda.">
+  <title>Finti — Tu factura vale hoy, no en 60 días</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#12B76A',
+            accent:  '#F79009',
+            surface: '#0D1B2A',
+          },
+          fontFamily: {
+            serif: ['DM Serif Display', 'serif'],
+            sans:  ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="nav-logo">Finti<span>.</span></a>
+      <span class="nav-badge"><span class="pulse-dot"></span> Pre-lanzamiento</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Cómo funciona</a></li>
+      <li><a href="#simulador">Simulador</a></li>
+      <li><a href="#comparativa">Comparativa</a></li>
+      <li><a href="inversores.html" class="investor-link">¿Eres inversor? →</a></li>
+      <li><a href="#formulario" class="nav-cta">Acceso anticipado</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Menú móvil -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#como-funciona">Cómo funciona</a>
+  <a href="#simulador">Simulador</a>
+  <a href="#comparativa">Comparativa</a>
+  <a href="#traccion">Testimonios</a>
+  <a href="inversores.html" style="color: var(--accent)">¿Eres inversor? →</a>
+  <a href="#formulario" style="color: var(--primary); font-weight: 700">Acceso anticipado</a>
+</div>
+
+<!-- Puntos de navegación lateral -->
+<nav class="side-nav" aria-label="Navegación por secciones">
+  <div class="side-dot active" data-section="hero"          title="Inicio"></div>
+  <div class="side-dot"        data-section="problema"      title="El problema"></div>
+  <div class="side-dot"        data-section="como-funciona" title="Cómo funciona"></div>
+  <div class="side-dot"        data-section="simulador"     title="Simulador"></div>
+  <div class="side-dot"        data-section="comparativa"   title="Comparativa"></div>
+  <div class="side-dot"        data-section="traccion"      title="Tracción"></div>
+  <div class="side-dot"        data-section="formulario"    title="Acceso anticipado"></div>
+</nav>
+
+
+<!-- ============================================================
+     S1 — HERO
+     ============================================================ -->
+<section class="section" id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#12B76A" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#12B76A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Factoring inteligente para pymes colombianas
+      </div>
+
+      <h1 class="hero-title" data-word-reveal>
+        Tu factura vale hoy,<br>no en 60 días.
+      </h1>
+
+      <p class="hero-sub">
+        Liquidez inmediata vía RADIAN en menos de 2 horas.<br>
+        Sin ejecutivos. Sin filas. Sin deuda.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#formulario" class="btn btn-primary btn-lg">
+          Quiero acceso anticipado
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#como-funciona" class="btn btn-ghost btn-lg">
+          Ver cómo funciona
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10m-4-4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-badges">
+        <div class="hero-badge-item">
+          <span class="hero-badge-icon">🏢</span>
+          <span class="hero-badge-num" data-counter="347" data-suffix="+">0</span>
+          <span class="hero-badge-label">pymes en lista de espera</span>
+        </div>
+        <div class="hero-badge-item">
+          <span class="hero-badge-icon">💰</span>
+          <span class="hero-badge-num" data-counter="8200" data-prefix="$" data-suffix="M">0</span>
+          <span class="hero-badge-label">en facturas pre-aprobadas</span>
+        </div>
+        <div class="hero-badge-item">
+          <span class="hero-badge-icon">📍</span>
+          <span class="hero-badge-num" data-counter="23" data-suffix=" ciudades">0</span>
+          <span class="hero-badge-label">en Colombia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    <span>Descubre más</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S2 — EL PROBLEMA
+     ============================================================ -->
+<section class="section" id="problema">
+  <div class="container">
+    <div class="problema-grid">
+
+      <!-- Texto -->
+      <div>
+        <div class="section-tag animate-on-scroll">El problema</div>
+        <h2 class="section-headline animate-on-scroll delay-1">
+          Cada día que esperas cobrar,<br>
+          <em>tu competencia ya cobró.</em>
+        </h2>
+        <p class="section-sub animate-on-scroll delay-2">
+          Las pymes colombianas emiten facturas a 30, 60 o 90 días. El capital queda atrapado mientras los gastos no esperan.
+        </p>
+
+        <div class="animate-on-scroll delay-2">
+          <p class="text-sm mt-6" style="color: var(--muted)">Tiempo promedio para cobrar una factura en Colombia</p>
+          <div class="stat-contrast">
+            <span class="stat-num">68</span>
+            <span class="stat-unit">días <br>de espera</span>
+          </div>
+        </div>
+
+        <div class="vs-block animate-on-scroll delay-3">
+          <div class="vs-item bad">
+            <div class="vs-label">Sin Finti</div>
+            <div class="vs-value">68 días</div>
+          </div>
+          <div class="vs-divider">→</div>
+          <div class="vs-item good">
+            <div class="vs-label">Con Finti</div>
+            <div class="vs-value">&lt; 2 horas</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta factura animada -->
+      <div class="factura-wrapper animate-on-scroll delay-2">
+        <div class="floating-badge top-right">✅ Verificado en RADIAN</div>
+
+        <div class="factura-card">
+          <div class="factura-header">Factura electrónica · DIAN</div>
+          <div class="factura-empresa">Construcciones Noriega SAS</div>
+          <div class="factura-monto">$85.000.000</div>
+
+          <div class="factura-status">
+            <span class="status-icon">⏳</span>
+            <span>
+              Esperando cobro: <span class="factura-dias" id="dias-anim">0</span> días
+            </span>
+          </div>
+          <div class="factura-dinero-perdido">
+            Liquidez sin usar: <strong id="perdido-anim">$0</strong>
+          </div>
+        </div>
+
+        <div class="floating-badge bottom-left">⚡ Con Finti: cobras hoy</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S3 — CÓMO FUNCIONA
+     ============================================================ -->
+<section class="section section-sm" id="como-funciona" style="background: var(--bg-2)">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag animate-on-scroll" style="justify-content: center">Proceso</div>
+      <h2 class="section-headline animate-on-scroll delay-1">
+        Tres pasos. Menos de dos horas.
+      </h2>
+      <p class="section-sub animate-on-scroll delay-2">
+        Diseñado para el empresario que no tiene tiempo que perder.
+      </p>
+    </div>
+
+    <div class="pasos-grid">
+      <div class="paso-card animate-on-scroll delay-1">
+        <div class="paso-num">01</div>
+        <div class="paso-icon">📄</div>
+        <h3 class="paso-title">Sube tu factura</h3>
+        <p class="paso-desc">
+          Carga el XML de la DIAN o ingresa el número de tu factura electrónica. Sin papeleo adicional.
+        </p>
+      </div>
+
+      <div class="paso-card animate-on-scroll delay-2">
+        <div class="paso-num">02</div>
+        <div class="paso-icon">🔍</div>
+        <h3 class="paso-title">Finti hace el estudio</h3>
+        <p class="paso-desc">
+          Verificamos en RADIAN y evaluamos al <strong style="color: var(--primary)">pagador</strong>, no a ti. Tu historial no nos interesa; el de tu cliente, sí.
+        </p>
+      </div>
+
+      <div class="paso-card animate-on-scroll delay-3">
+        <div class="paso-num">03</div>
+        <div class="paso-icon">💸</div>
+        <h3 class="paso-title">Recibe tu dinero</h3>
+        <p class="paso-desc">
+          Desembolso directo a tu cuenta en menos de 2 horas. Tú cobras hoy; nosotros gestionamos el cobro al vencimiento.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center animate-on-scroll delay-3">
+      <div class="radian-badge">
+        <span class="radian-dot"></span>
+        <strong>Integrado con RADIAN</strong> — plataforma oficial de la DIAN para facturas electrónicas
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S4 — SIMULADOR DE LIQUIDEZ
+     ============================================================ -->
+<section class="section" id="simulador">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px">
+      <div class="section-tag animate-on-scroll" style="justify-content: center">Simulador</div>
+      <h2 class="section-headline animate-on-scroll delay-1">
+        ¿Cuánto vale tu factura hoy?
+      </h2>
+      <p class="section-sub animate-on-scroll delay-2">
+        Tasa referencial de 1.8% mensual. La oferta final depende del perfil del pagador.
+      </p>
+    </div>
+
+    <div class="sim-wrapper animate-on-scroll">
+      <!-- Inputs -->
+      <div class="sim-card">
+        <div class="sim-label">Valor de la factura</div>
+        <div class="sim-value-display" id="sim-valor-display">$50.000.000</div>
+        <div class="slider-wrapper">
+          <input type="range" id="sim-slider" min="1000000" max="500000000" step="1000000" value="50000000">
+        </div>
+        <div class="flex gap-3 mb-4">
+          <input
+            type="text"
+            id="sim-valor-input"
+            class="form-input"
+            placeholder="Ingresa el valor"
+            inputmode="numeric"
+            style="flex: 1"
+          >
+        </div>
+
+        <div class="sim-label mt-4">Días para vencimiento</div>
+        <div class="dias-options">
+          <button class="dias-option active" data-dias="30">30 días</button>
+          <button class="dias-option" data-dias="60">60 días</button>
+          <button class="dias-option" data-dias="90">90 días</button>
+        </div>
+
+        <div class="tasa-info">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#F79009" stroke-width="1.2"/><path d="M8 5v3.5M8 11v.5" stroke="#F79009" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Tasa referencial: <strong>1.8% mensual</strong> + comisión fija $25.000
+        </div>
+
+        <!-- Costo de oportunidad -->
+        <div class="oportunidad-card">
+          <div class="oportunidad-title">💡 Costo de oportunidad mensual</div>
+          <div class="oportunidad-value" id="sim-oportunidad">$0</div>
+          <div class="oportunidad-desc" id="sim-oportunidad-desc">
+            Calcula el capital inmovilizado por esperar cobrar.
+          </div>
+        </div>
+      </div>
+
+      <!-- Outputs -->
+      <div class="sim-outputs">
+        <div class="output-card highlight">
+          <div class="output-label">Recibes hoy</div>
+          <div class="output-value" id="sim-neto">$49.125.000</div>
+          <div class="output-note">Neto después de descuento y comisión</div>
+        </div>
+        <div class="output-card">
+          <div class="output-label">Costo total de la operación</div>
+          <div class="output-value" id="sim-costo">$875.000</div>
+          <div class="output-note">Descuento financiero + comisión fija</div>
+        </div>
+        <div class="output-card">
+          <div class="output-label">Tasa efectiva anual equivalente</div>
+          <div class="output-value" id="sim-tea">23.9% E.A.</div>
+          <div class="output-note">Referencial — la oferta final varía</div>
+        </div>
+        <div style="margin-top: 8px">
+          <a href="#formulario" class="btn btn-primary" style="width: 100%; justify-content: center">
+            Calcular mi oferta real
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="text-xs mt-3" style="color: var(--muted); text-align: center">
+            Sin compromiso · Solo necesitamos tu factura
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S5 — COMPARATIVA
+     ============================================================ -->
+<section class="section section-sm" id="comparativa" style="background: var(--bg-2)">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 0">
+      <div class="section-tag animate-on-scroll" style="justify-content: center">Comparativa</div>
+      <h2 class="section-headline animate-on-scroll delay-1">
+        ¿Por qué Finti y no los demás?
+      </h2>
+      <p class="section-sub animate-on-scroll delay-2">
+        No somos una plataforma blanca ni una suite empresarial. Somos el factor que compra tu factura y te paga hoy.
+      </p>
+    </div>
+
+    <div class="comparison-wrap animate-on-scroll delay-2">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="finti-col">
+              Finti <span class="col-badge">Recomendado</span>
+            </th>
+            <th>Klym</th>
+            <th>Finaktiva</th>
+            <th>Banco tradicional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tiempo de aprobación</td>
+            <td class="finti-col">✅ &lt;2 horas</td>
+            <td>⚠️ 24–48 horas<span class="comparison-note">Depende del ejecutivo</span></td>
+            <td>⚠️ 1–3 días</td>
+            <td>❌ Semanas</td>
+          </tr>
+          <tr>
+            <td>¿Acepta pymes pequeñas?</td>
+            <td class="finti-col">✅ Sí</td>
+            <td>❌ Solo grandes corporativos</td>
+            <td>⚠️ Medianas y grandes</td>
+            <td>❌ Requiere colateral</td>
+          </tr>
+          <tr>
+            <td>¿Requiere ejecutivo comercial?</td>
+            <td class="finti-col">✅ No — 100% digital</td>
+            <td>❌ Sí, asignado</td>
+            <td>❌ Sí, para onboarding</td>
+            <td>❌ Sí, múltiples</td>
+          </tr>
+          <tr>
+            <td>¿Necesita integración ERP?</td>
+            <td class="finti-col">✅ No — usa XML DIAN</td>
+            <td>❌ Requiere ERP</td>
+            <td>⚠️ Opcional pero recomendado</td>
+            <td>❌ No aplica</td>
+          </tr>
+          <tr>
+            <td>¿Genera deuda en tu balance?</td>
+            <td class="finti-col">✅ No — factoring puro</td>
+            <td>✅ No</td>
+            <td>⚠️ Depende del producto</td>
+            <td>❌ Sí, crédito tradicional</td>
+          </tr>
+          <tr>
+            <td>¿Acepta pagadores medianos?</td>
+            <td class="finti-col">✅ Sí<span class="comparison-note">Sin importar el tamaño del pagador</span></td>
+            <td>❌ Solo pagadores top</td>
+            <td>⚠️ Selectivo</td>
+            <td>❌ Solo grandes empresas</td>
+          </tr>
+          <tr>
+            <td>Proceso 100% digital</td>
+            <td class="finti-col">✅ Sí</td>
+            <td>❌ No</td>
+            <td>❌ No</td>
+            <td>❌ No</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S6 — TRACCIÓN Y TESTIMONIOS
+     ============================================================ -->
+<section class="section section-sm" id="traccion">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 56px">
+      <div class="section-tag animate-on-scroll" style="justify-content: center">Tracción</div>
+      <h2 class="section-headline animate-on-scroll delay-1">
+        Pymes que ya confían en Finti
+      </h2>
+    </div>
+
+    <!-- Métricas -->
+    <div class="traction-grid">
+      <div class="traction-card animate-on-scroll delay-1">
+        <div class="traction-icon">🏢</div>
+        <div class="traction-num" data-counter="347" data-suffix="+">0</div>
+        <div class="traction-label">Pymes en lista de espera</div>
+      </div>
+      <div class="traction-card animate-on-scroll delay-2">
+        <div class="traction-icon">💰</div>
+        <div class="traction-num" data-counter="8200" data-prefix="$" data-suffix="M">0</div>
+        <div class="traction-label">En facturas pre-aprobadas</div>
+      </div>
+      <div class="traction-card animate-on-scroll delay-3">
+        <div class="traction-icon">📍</div>
+        <div class="traction-num" data-counter="23" data-suffix="">0</div>
+        <div class="traction-label">Ciudades representadas</div>
+      </div>
+      <div class="traction-card animate-on-scroll delay-4">
+        <div class="traction-icon">⚡</div>
+        <div class="traction-num" data-counter="2" data-prefix="&lt;" data-suffix="h">0</div>
+        <div class="traction-label">Tiempo promedio de aprobación</div>
+      </div>
+    </div>
+
+    <!-- Testimonios -->
+    <div class="testimonios-grid" style="margin-top: 48px">
+      <div class="testimonio-card animate-on-scroll delay-1">
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-quote">
+          "Llevaba 45 días esperando que Bavaria me pagara. Con Finti recibí el dinero el mismo día que subí la factura. Increíble."
+        </p>
+        <div class="testimonio-author">
+          <div class="author-avatar">MR</div>
+          <div>
+            <div class="author-name">Mauricio Restrepo</div>
+            <div class="author-empresa">Logística Restrepo SAS · Medellín</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio-card animate-on-scroll delay-2">
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-quote">
+          "Mi banco me pedía estados financieros de 3 años y aún así no me aprobaban. Finti solo me preguntó por la factura y listo."
+        </p>
+        <div class="testimonio-author">
+          <div class="author-avatar">LP</div>
+          <div>
+            <div class="author-name">Laura Pinzón</div>
+            <div class="author-empresa">Servicios Ambientales LP · Bogotá</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonio-card animate-on-scroll delay-3">
+        <div class="testimonio-stars">★★★★★</div>
+        <p class="testimonio-quote">
+          "Lo que más me sorprendió fue que no me evaluaron a mí sino al que me tiene que pagar. Eso lo cambia todo para las pymes."
+        </p>
+        <div class="testimonio-author">
+          <div class="author-avatar">CA</div>
+          <div>
+            <div class="author-name">Carlos Arias</div>
+            <div class="author-empresa">Constructora Arias & Co · Cali</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <div class="dian-badge animate-on-scroll">
+        <span class="shield">🛡️</span>
+        <div>
+          <strong style="color: var(--text)">Operamos bajo el marco regulatorio colombiano</strong><br>
+          Decreto 1068 de 2015 · Integrado con RADIAN-DIAN · Datos cifrados
+        </div>
+      </div>
+      <p class="traction-note">* Cifras de lista de espera pre-lanzamiento. Testimonios de beta testers.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S7 — FORMULARIO EARLY ACCESS
+     ============================================================ -->
+<section class="section" id="formulario" style="background: var(--bg-2)">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px">
+      <div class="section-tag animate-on-scroll" style="justify-content: center">Acceso anticipado</div>
+      <h2 class="section-headline animate-on-scroll delay-1">
+        Únete a la lista —<br>los primeros 50 con tasa preferencial.
+      </h2>
+      <p class="section-sub animate-on-scroll delay-2">
+        Sin compromiso. Te contactamos en las próximas 24 horas con tu oferta real.
+      </p>
+    </div>
+
+    <div class="form-wrapper animate-on-scroll delay-2">
+
+      <!-- Progreso -->
+      <div class="form-progress">
+        <div class="progress-step active" id="step-indicator-1">
+          <div class="step-circle">1</div>
+          <span>Tu empresa</span>
+        </div>
+        <div class="progress-line" id="progress-line-1"></div>
+        <div class="progress-step" id="step-indicator-2">
+          <div class="step-circle">2</div>
+          <span>Perfil de facturación</span>
+        </div>
+      </div>
+
+      <!-- Tarjeta del formulario -->
+      <div class="form-card">
+
+        <!-- PASO 1 -->
+        <div class="form-step" id="form-step-1">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label class="form-label" for="razon-social">Razón social</label>
+              <input class="form-input" id="razon-social" type="text" placeholder="Ej: Distribuciones García SAS">
+              <span class="field-error" id="error-razon-social"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="nit">NIT (con dígito de verificación)</label>
+              <input class="form-input" id="nit" type="text" placeholder="Ej: 9001234567" inputmode="numeric">
+              <span class="field-error" id="error-nit"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="whatsapp">WhatsApp del decisor</label>
+              <input class="form-input" id="whatsapp" type="tel" placeholder="3001234567" inputmode="numeric" maxlength="10">
+              <span class="field-error" id="error-whatsapp"></span>
+            </div>
+
+            <div class="form-group full">
+              <label class="form-label" for="email">Email corporativo</label>
+              <input class="form-input" id="email" type="email" placeholder="nombre@tuempresa.com">
+              <span class="field-error" id="error-email"></span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <p class="text-xs" style="color: var(--muted)">Tus datos están protegidos con cifrado.</p>
+            <button class="btn btn-primary" id="btn-next" type="button">
+              Continuar
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="form-step hidden" id="form-step-2">
+          <form id="lead-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="volumen">Volumen mensual de facturación</label>
+                <select class="form-input" id="volumen">
+                  <option value="">Selecciona</option>
+                  <option value="menos-50M">Menos de $50M</option>
+                  <option value="50M-200M">$50M – $200M</option>
+                  <option value="200M-500M">$200M – $500M</option>
+                  <option value="mas-500M">Más de $500M</option>
+                </select>
+                <span class="field-error" id="error-volumen"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="plazo">Plazo promedio de cobro</label>
+                <select class="form-input" id="plazo">
+                  <option value="">Selecciona</option>
+                  <option value="30">30 días</option>
+                  <option value="60">60 días</option>
+                  <option value="90">90 días</option>
+                  <option value="mas-90">Más de 90 días</option>
+                </select>
+                <span class="field-error" id="error-plazo"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="ciudad">Ciudad</label>
+                <input class="form-input" id="ciudad" type="text" placeholder="Ej: Bogotá">
+                <span class="field-error" id="error-ciudad"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="sector">Sector económico</label>
+                <select class="form-input" id="sector">
+                  <option value="">Selecciona</option>
+                  <option value="construccion">Construcción</option>
+                  <option value="servicios">Servicios</option>
+                  <option value="manufactura">Manufactura</option>
+                  <option value="agroindustria">Agroindustria</option>
+                  <option value="salud">Salud</option>
+                  <option value="tecnologia">Tecnología</option>
+                  <option value="otro">Otro</option>
+                </select>
+                <span class="field-error" id="error-sector"></span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-ghost" id="btn-back" type="button">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Volver
+              </button>
+              <button class="btn btn-primary" type="submit">
+                Quiero acceso anticipado 🚀
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div><!-- /form-card -->
+
+      <!-- Estado de confirmación -->
+      <div class="form-card form-success">
+        <div class="success-icon">✅</div>
+        <h3 class="success-title">¡Estás dentro!</h3>
+        <p class="success-desc">
+          Te contactamos en las próximas 24 horas con tu oferta personalizada.<br>
+          <strong style="color: var(--text)">Revisa tu WhatsApp y email.</strong>
+        </p>
+        <button class="btn btn-ghost hidden" id="export-btn">
+          ⬇ Descargar leads (JSON)
+        </button>
+      </div>
+
+    </div><!-- /form-wrapper -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Finti<span>.</span></div>
+        <p class="footer-legal mt-3">
+          Finti opera como factor comercial en proceso de registro ante el Registro Nacional de Factores (Decreto 1068 de 2015). Los valores mostrados en el simulador son referenciales y no constituyen una oferta vinculante.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Términos</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Contacto</a>
+        <a href="inversores.html" style="color: var(--accent)">Inversores</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 2026 Finti SAS — Colombia · Todos los derechos reservados
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/app.js"></script>
+<script>
+  // Inicialización específica del index: mostrar export si ya hay leads al cargar
+  document.addEventListener('DOMContentLoaded', () => {
+    const successCard = document.querySelector('.form-success');
+    const exportBtn   = document.getElementById('export-btn');
+    if (contarLeads() >= 1 && exportBtn) exportBtn.classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>

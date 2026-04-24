@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Finti — Investor pitch. El factoring en Colombia es un mercado de $80 billones. Lo estamos digitalizando.">
+  <title>Finti para Inversores — Ronda Pre-Seed</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#12B76A',
+            accent:  '#F79009',
+            surface: '#0D1B2A',
+          },
+          fontFamily: {
+            serif: ['DM Serif Display', 'serif'],
+            sans:  ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    /* Estilos adicionales específicos del pitch de inversores */
+    .moat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .moat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .moat-card:first-child {
+      grid-column: 1 / -1;
+      background: var(--primary-glow);
+      border-color: rgba(18, 183, 106, 0.3);
+    }
+    .moat-icon  { font-size: 1.8rem; margin-bottom: 12px; }
+    .moat-title { font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+    .moat-desc  { font-size: 0.875rem; color: var(--text-2); line-height: 1.65; }
+
+    .unit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .unit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+    .unit-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; }
+    .unit-value { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: var(--primary); }
+    .unit-note  { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+
+    @media (max-width: 768px) {
+      .moat-grid  { grid-template-columns: 1fr; }
+      .moat-card:first-child { grid-column: auto; }
+      .unit-grid  { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR — Versión inversores
+     ============================================================ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <div class="flex items-center gap-3">
+      <a href="inversores.html" class="nav-logo">Finti<span>.</span></a>
+      <span class="nav-badge" style="color: var(--accent); background: var(--accent-glow); border-color: rgba(247,144,9,0.3)">
+        <span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block"></span>
+        Ronda Pre-Seed
+      </span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#oportunidad">Oportunidad</a></li>
+      <li><a href="#modelo">Modelo</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#por-que-ahora">Por qué ahora</a></li>
+      <li><a href="index.html" style="color: var(--primary)">← Para empresas</a></li>
+      <li><a href="#inv-cta" class="nav-cta">Agendar reunión</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Menú móvil -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#oportunidad">Oportunidad</a>
+  <a href="#modelo">Modelo de negocio</a>
+  <a href="#equipo">Equipo</a>
+  <a href="#por-que-ahora">Por qué ahora</a>
+  <a href="index.html" style="color: var(--primary)">← Para empresas</a>
+  <a href="#inv-cta" style="color: var(--accent); font-weight: 700">Agendar reunión</a>
+</div>
+
+
+<!-- ============================================================
+     S1 — HERO INVERSOR
+     ============================================================ -->
+<section class="section inv-hero" id="inv-hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="orb orb-1" style="background: radial-gradient(circle, rgba(247,144,9,0.1), transparent 70%)"></div>
+    <div class="orb orb-2" style="background: radial-gradient(circle, rgba(18,183,106,0.08), transparent 70%)"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="market-tag">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L9 5.5H13.5L10 8.5L11.5 13L7 10.5L2.5 13L4 8.5L0.5 5.5H5L7 1Z" fill="#F79009"/></svg>
+        Ronda Pre-Seed · Colombia 2026
+      </div>
+
+      <h1 class="hero-title" style="animation: none; opacity: 1">
+        El factoring en Colombia<br>mueve <em style="color: var(--accent)">$80 billones</em> al año.<br>El 85% sigue siendo manual.
+      </h1>
+
+      <p class="hero-sub" style="animation: none; opacity: 1; margin-top: 28px">
+        Finti digitaliza el factoring de facturas electrónicas para pymes colombianas vía integración directa con RADIAN-DIAN. Aprobación en &lt;2 horas, sin ejecutivos, sin papeleo.
+      </p>
+
+      <div class="hero-actions" style="animation: none; opacity: 1; margin-top: 40px">
+        <a href="#inv-cta" class="btn btn-accent btn-lg">
+          Agendar reunión de 30 min
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#oportunidad" class="btn btn-ghost btn-lg">
+          Ver el pitch completo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10m-4-4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="hero-badges" style="animation: none; opacity: 1; margin-top: 56px">
+        <div class="hero-badge-item">
+          <span class="hero-badge-icon">🏢</span>
+          <span class="hero-badge-num" data-counter="347" data-suffix="+">0</span>
+          <span class="hero-badge-label">pymes en lista de espera</span>
+        </div>
+        <div class="hero-badge-item">
+          <span class="hero-badge-icon">💵</span>
+          <span class="hero-badge-num" data-counter="8200" data-prefix="$" data-suffix="M">0</span>
+          <span class="hero-badge-label">en facturas pre-aprobadas</span>
+        </div>
+        <div class="hero-badge-item">
+          <span class="hero-badge-icon">📈</span>
+          <span style="font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--accent)">Pre-Seed</span>
+          <span class="hero-badge-label">ronda en proceso</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S2 — LA OPORTUNIDAD
+     ============================================================ -->
+<section class="section section-sm" id="oportunidad" style="background: var(--bg-2)">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag animate-on-scroll" style="justify-content: center; color: var(--accent)">
+        <span style="background: var(--accent)"></span>La oportunidad
+      </div>
+      <h2 class="section-headline animate-on-scroll delay-1">
+        Un mercado enorme,<br>digitalmente virgen.
+      </h2>
+      <p class="section-sub animate-on-scroll delay-2">
+        El factoring en Colombia mueve billones al año. Más del 85% de las operaciones siguen siendo manuales, asistidas por ejecutivos, con tiempos de aprobación de días.
+      </p>
+    </div>
+
+    <div class="tam-visual animate-on-scroll delay-2">
+      <div class="tam-item">
+        <div class="tam-circle tam">
+          <div class="tam-circle-label">TAM</div>
+          <div class="tam-circle-num">$80B<br><span style="font-size:0.8rem; font-family: 'Plus Jakarta Sans'">COP / año</span></div>
+        </div>
+        <div class="tam-item-label">Mercado total de factoring</div>
+        <div class="tam-item-desc">Facturas electrónicas en circulación en Colombia</div>
+      </div>
+
+      <div class="tam-item">
+        <div class="tam-circle sam">
+          <div class="tam-circle-label">SAM</div>
+          <div class="tam-circle-num">$12B<br><span style="font-size:0.8rem; font-family: 'Plus Jakarta Sans'">COP / año</span></div>
+        </div>
+        <div class="tam-item-label">Mercado alcanzable</div>
+        <div class="tam-item-desc">Pymes con facturación $50M–$500M/mes</div>
+      </div>
+
+      <div class="tam-item">
+        <div class="tam-circle som">
+          <div class="tam-circle-label">SOM</div>
+          <div class="tam-circle-num">$5.000M<br><span style="font-size:0.8rem; font-family: 'Plus Jakarta Sans'">COP año 1</span></div>
+        </div>
+        <div class="tam-item-label">Meta operativa año 1</div>
+        <div class="tam-item-desc">500 operaciones a ticket promedio $10M</div>
+      </div>
+    </div>
+
+    <div class="mt-16 animate-on-scroll delay-3">
+      <div class="glass-card" style="max-width: 760px; margin: 0 auto; text-align: center">
+        <p style="font-family: 'DM Serif Display', serif; font-size: 1.4rem; line-height: 1.5; color: var(--text)">
+          "Solo el <strong style="color: var(--accent)">12% de las pymes</strong> colombianas ha accedido a factoring alguna vez. La barrera no es financiera — es de acceso y fricción."
+        </p>
+        <p class="text-sm mt-4" style="color: var(--muted)">Fuente: Superintendencia Financiera de Colombia, 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S3 — MODELO DE NEGOCIO
+     ============================================================ -->
+<section class="section section-sm" id="modelo">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag animate-on-scroll" style="justify-content: center">Modelo de negocio</div>
+      <h2 class="section-headline animate-on-scroll delay-1">
+        Simple, escalable,<br>con margen desde el día uno.
+      </h2>
+    </div>
+
+    <!-- Flujo visual -->
+    <div class="modelo-flow animate-on-scroll delay-2">
+      <div class="modelo-node">
+        <div class="modelo-node-icon">🏭</div>
+        <div class="modelo-node-title">PYME</div>
+        <div class="modelo-node-sub">Tiene factura</div>
+      </div>
+
+      <div class="modelo-arrow">
+        <div class="modelo-arrow-line"></div>
+        <div class="modelo-arrow-label">Vende factura<br>(con descuento)</div>
+      </div>
+
+      <div class="modelo-node finti">
+        <div class="modelo-node-icon">⚡</div>
+        <div class="modelo-node-title">FINTI</div>
+        <div class="modelo-node-sub">Compra la factura</div>
+      </div>
+
+      <div class="modelo-arrow">
+        <div class="modelo-arrow-line"></div>
+        <div class="modelo-arrow-label">Cobra 100%<br>al vencimiento</div>
+      </div>
+
+      <div class="modelo-node">
+        <div class="modelo-node-icon">🏢</div>
+        <div class="modelo-node-title">PAGADOR</div>
+        <div class="modelo-node-sub">Empresa grande</div>
+      </div>
+    </div>
+
+    <!-- Revenue streams -->
+    <div class="modelo-revenue animate-on-scroll delay-3">
+      <div class="revenue-item">
+        <div class="revenue-icon">📊</div>
+        <div class="revenue-title">Spread de tasa</div>
+        <div class="revenue-desc">Diferencial entre tasa de descuento cobrada a la pyme (1.8%–3.5%/mes) y costo de capital propio.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-icon">🎯</div>
+        <div class="revenue-title">Comisión fija</div>
+        <div class="revenue-desc">$25.000 COP por operación, independiente del valor. Alto margen en operaciones pequeñas.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="revenue-icon">🔄</div>
+        <div class="revenue-title">Recurrencia</div>
+        <div class="revenue-desc">Las pymes facturan mensualmente. Un cliente aprobado puede generar múltiples operaciones/año sin reaprobación.</div>
+      </div>
+    </div>
+
+    <!-- Unit economics -->
+    <div class="animate-on-scroll delay-3" style="margin-top: 48px">
+      <div class="section-tag" style="justify-content: center; margin-bottom: 0; text-align: center; display: flex">Unit Economics (proyectados)</div>
+      <div class="unit-grid">
+        <div class="unit-card">
+          <div class="unit-label">Ticket promedio</div>
+          <div class="unit-value">$10M</div>
+          <div class="unit-note">COP por operación</div>
+        </div>
+        <div class="unit-card">
+          <div class="unit-label">Margen bruto</div>
+          <div class="unit-value">68%</div>
+          <div class="unit-note">En estado estable</div>
+        </div>
+        <div class="unit-card">
+          <div class="unit-label">CAC estimado</div>
+          <div class="unit-value">$180K</div>
+          <div class="unit-note">COP por cliente</div>
+        </div>
+        <div class="unit-card">
+          <div class="unit-label">LTV / CAC</div>
+          <div class="unit-value">12×</div>
+          <div class="unit-note">A 24 meses</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S4 — POR QUÉ AHORA (RADIAN como moat)
+     ============================================================ -->
+<section class="section section-sm" id="por-que-ahora" style="background: var(--bg-2)">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Texto -->
+      <div>
+        <div class="section-tag animate-on-scroll">Por qué ahora</div>
+        <h2 class="section-headline animate-on-scroll delay-1">
+          RADIAN habilitó el<br>factoring digital en 2024.<br>
+          <em>Nadie lo ha aprovechado.</em>
+        </h2>
+        <p class="section-sub animate-on-scroll delay-2">
+          La DIAN lanzó RADIAN como plataforma oficial para la circulación de facturas electrónicas como título valor. Por primera vez, es posible verificar, endosar y operar una factura en tiempo real — sin intermediarios físicos, sin papeleo.
+        </p>
+
+        <div class="moat-grid animate-on-scroll delay-3">
+          <div class="moat-card">
+            <div class="moat-icon">🔐</div>
+            <div class="moat-title">Integración RADIAN como moat</div>
+            <div class="moat-desc">
+              La integración con RADIAN requiere certificación técnica ante la DIAN. Es una barrera de entrada que los competidores establecidos (Klym, Finaktiva) no han priorizado para el segmento pyme. Finti la construye desde el inicio.
+            </div>
+          </div>
+          <div class="moat-card">
+            <div class="moat-icon">📋</div>
+            <div class="moat-title">Marco regulatorio claro</div>
+            <div class="moat-desc">
+              Decreto 1068 de 2015 y sus modificaciones regulan el factoring en Colombia. El registro como factor comercial ante el Registro Nacional de Factores es el camino definido — no hay incertidumbre regulatoria.
+            </div>
+          </div>
+          <div class="moat-card">
+            <div class="moat-icon">📈</div>
+            <div class="moat-title">Adopción de factura electrónica</div>
+            <div class="moat-desc">
+              La DIAN obligó la factura electrónica para todas las empresas desde 2023. El 100% de las facturas ya están en el sistema digital — el insumo de Finti está universalmente disponible.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="animate-on-scroll delay-2">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-content-title">Decreto 1068 — Marco legal del factoring</div>
+              <div class="timeline-content-desc">Colombia establece el Registro Nacional de Factores y el marco jurídico para la compraventa de facturas como título valor.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2019</div>
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-content-title">Factura electrónica obligatoria (grandes empresas)</div>
+              <div class="timeline-content-desc">La DIAN inicia la migración masiva al sistema de facturación electrónica, sentando las bases de RADIAN.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-content-title">Universalización factura electrónica</div>
+              <div class="timeline-content-desc">Todas las empresas del país emiten facturas electrónicas. 100% del mercado objetivo ya opera en el sistema digital.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-content-title">RADIAN habilitado para factores ✅</div>
+              <div class="timeline-content-desc"><strong style="color: var(--primary)">La ventana se abre.</strong> Por primera vez, un factor comercial puede verificar, endosar y operar facturas electrónicas en tiempo real vía API.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-dot" style="background: var(--accent); box-shadow: 0 0 0 4px var(--accent-glow)"></div>
+            <div>
+              <div class="timeline-content-title" style="color: var(--accent)">Finti — lanzamiento 🚀</div>
+              <div class="timeline-content-desc">Primera plataforma de factoring 100% digital integrada con RADIAN. El mercado está listo; la tecnología también.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S5 — EQUIPO
+     ============================================================ -->
+<section class="section section-sm" id="equipo">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag animate-on-scroll" style="justify-content: center">Equipo</div>
+      <h2 class="section-headline animate-on-scroll delay-1">
+        Los operadores que hacen<br>que esto funcione.
+      </h2>
+      <p class="section-sub animate-on-scroll delay-2">
+        Combinamos experiencia en banca, producto digital y tecnología. No somos académicos con un MVP — somos operadores con cicatrices.
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card animate-on-scroll delay-1">
+        <div class="team-avatar">JM</div>
+        <div class="team-name">Juan Medina</div>
+        <div class="team-role">CEO & Crédito</div>
+        <p class="team-bio">
+          8 años estructurando operaciones de crédito y factoring en Bancolombia. Conoce el riesgo de pagadores colombianos como nadie.
+        </p>
+        <div class="team-prev">
+          <span class="team-tag">ex-Bancolombia</span>
+          <span class="team-tag">Crédito empresarial</span>
+          <span class="team-tag">MBA Uniandes</span>
+        </div>
+        <a href="#" class="linkedin-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#12B76A"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-5a2 2 0 110 4 2 2 0 010-4z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+
+      <div class="team-card animate-on-scroll delay-2">
+        <div class="team-avatar">VT</div>
+        <div class="team-name">Valentina Torres</div>
+        <div class="team-role">CPO & Growth</div>
+        <p class="team-bio">
+          Lideró producto y crecimiento para 3 verticales en Rappi Colombia. Construyó experiencias de usuario que adquirieron 200K+ comercios.
+        </p>
+        <div class="team-prev">
+          <span class="team-tag">ex-Rappi</span>
+          <span class="team-tag">Product Management</span>
+          <span class="team-tag">Growth B2B</span>
+        </div>
+        <a href="#" class="linkedin-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#12B76A"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-5a2 2 0 110 4 2 2 0 010-4z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+
+      <div class="team-card animate-on-scroll delay-3">
+        <div class="team-avatar">AG</div>
+        <div class="team-name">Andrés Gómez</div>
+        <div class="team-role">CTO</div>
+        <p class="team-bio">
+          Full-stack con experiencia en fintech de alta disponibilidad. Construyó la integración con APIs gubernamentales para dos startups colombianas exitosamente.
+        </p>
+        <div class="team-prev">
+          <span class="team-tag">ex-Platzi Engineering</span>
+          <span class="team-tag">APIs DIAN</span>
+          <span class="team-tag">Fintech infra</span>
+        </div>
+        <a href="#" class="linkedin-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#12B76A"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-5a2 2 0 110 4 2 2 0 010-4z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S6 — CTA INVERSOR
+     ============================================================ -->
+<section class="section section-sm" id="inv-cta" style="background: var(--bg-2)">
+  <div class="container">
+
+    <!-- Métricas de tracción resumidas -->
+    <div class="traction-grid animate-on-scroll" style="margin-bottom: 64px">
+      <div class="traction-card">
+        <div class="traction-icon">🏢</div>
+        <div class="traction-num" data-counter="347" data-suffix="+">0</div>
+        <div class="traction-label">Pymes en lista de espera</div>
+      </div>
+      <div class="traction-card">
+        <div class="traction-icon">💰</div>
+        <div class="traction-num" data-counter="8200" data-prefix="$" data-suffix="M">0</div>
+        <div class="traction-label">Facturas pre-aprobadas</div>
+      </div>
+      <div class="traction-card">
+        <div class="traction-icon">⚡</div>
+        <div class="traction-num" data-counter="2" data-prefix="&lt;" data-suffix="h">0</div>
+        <div class="traction-label">Tiempo de aprobación</div>
+      </div>
+      <div class="traction-card">
+        <div class="traction-icon">🌎</div>
+        <div class="traction-num" data-counter="23" data-suffix="">0</div>
+        <div class="traction-label">Ciudades representadas</div>
+      </div>
+    </div>
+
+    <!-- Card de cierre -->
+    <div class="inv-cta-card animate-on-scroll delay-2">
+      <div class="section-tag" style="justify-content: center; display: flex; margin-bottom: 20px; color: var(--accent)">
+        <span style="background: var(--accent)"></span>Hablemos
+      </div>
+      <h2 class="section-headline" style="margin-bottom: 16px; max-width: 700px; margin-left: auto; margin-right: auto">
+        Estamos construyendo la infraestructura de liquidez<br>para las pymes de Colombia.
+      </h2>
+      <p class="section-sub" style="margin: 0 auto 40px">
+        Ronda Pre-Seed abierta. Si crees que este mercado merece ser resuelto, hablemos.
+      </p>
+
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="https://wa.me/573001234567?text=Hola%2C%20soy%20inversor%20y%20quiero%20hablar%20con%20el%20equipo%20de%20Finti"
+           class="btn btn-accent btn-lg"
+           target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribir por WhatsApp
+        </a>
+        <a href="mailto:hola@finti.co?subject=Interés%20en%20invertir%20en%20Finti"
+           class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Enviar email
+        </a>
+      </div>
+
+      <p class="text-sm mt-8" style="color: var(--muted)">
+        Tiempo de respuesta: &lt;24 horas · NDA disponible · Deck bajo solicitud
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Finti<span>.</span></div>
+        <p class="footer-legal mt-3">
+          Finti SAS está en proceso de registro ante el Registro Nacional de Factores (Decreto 1068 de 2015). Las proyecciones financieras presentadas son estimaciones basadas en supuestos de mercado y no constituyen una garantía de retorno. Esta página es de uso confidencial para potenciales inversores.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html" style="color: var(--primary)">← Para empresas</a>
+        <a href="#">Términos</a>
+        <a href="#">Privacidad</a>
+        <a href="mailto:hola@finti.co">hola@finti.co</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © 2026 Finti SAS — Colombia · Información confidencial para potenciales inversores
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/app.js"></script>
+
+</body>
+</html>
